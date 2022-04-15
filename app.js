@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const Drums = require("./models/drums.model");
+const Drum = require("./models/drums.model");
 const mongoose = require("mongoose");
 
 const keyboard = require("./models/keyboard.model");
@@ -62,6 +62,20 @@ app.post("/keyboard", function(req, res, next){
   });
 });
 
+app.get("/drums", function (req, res, next) {
+
+  Drum.find()
+    .then(function (foundDrum) {
+      console.log("We found a drum", foundDrum);
+      res.render("drums", {drums: foundDrum});
+    })
+    .catch(function (err) {
+      console.log("Something went wrong", err.message);
+    });
+});
+
+
+
 
 
 
@@ -79,6 +93,7 @@ app.get("/guitars", function (req, res, next) {
       console.log("Something went wrong", err.message);
     });
 });
+
 
 
 

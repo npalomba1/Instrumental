@@ -11,14 +11,16 @@ const drumSchema = new Schema({
     },
     brand: {
         type: String,
-        required: true,
     },
     price: {
         type: String,
-        required: true,
     },
+    isUsed: {
+        type: String,
+        enum: ["yes", "no"],
+    }
 });
 
-const Drum = model("Drums", drumSchema);
+const Drum = model("Drum", drumSchema);
 
 module.exports = Drum;
