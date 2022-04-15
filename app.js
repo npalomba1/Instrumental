@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const Drums = require("./models/drums.model");
 const mongoose = require("mongoose");
-const keyboard = require("./models/keyboard.models");
+const keyboard = require("./models/keyboard.model");
 
 
 
@@ -45,6 +45,7 @@ app.get("/keyboard", function (req, res, next) {
 
 app.post("/keyboard", function(req, res, next){
   keyboard.create({
+    image: req.body.image,
     name: req.body.name,
     brand: req.body.brand,
     price: req.body.price,
@@ -57,12 +58,6 @@ app.post("/keyboard", function(req, res, next){
   .catch(function (error) {
     res.json(error.message);
   });
-});
-
-
-
-app.get("/", function (req, res, next) {
-  res.render("index", { title: "Instrumental" });
 });
 
 //
