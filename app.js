@@ -5,8 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const Drum = require("./models/drums.model");
 const mongoose = require("mongoose");
-const keyboard = require("./models/keyboard.models");
 
+const keyboard = require("./models/keyboard.model");
+
+const Guitar = require("./models/Guitar.models")
 
 
 var indexRouter = require('./routes/index');
@@ -45,6 +47,7 @@ app.get("/keyboard", function (req, res, next) {
 
 app.post("/keyboard", function(req, res, next){
   keyboard.create({
+    image: req.body.image,
     name: req.body.name,
     brand: req.body.brand,
     price: req.body.price,
@@ -73,7 +76,25 @@ app.get("/drums", function (req, res, next) {
 
 
 
-//
+
+
+
+app.get("/", function (req, res, next) {
+  res.render("index", { title: "Instrumental" });
+});
+
+app.get("/guitars", function (req, res, next) {
+  Guitar.find()
+    .then(function (results){
+      console.log('Success!', results); 
+      res.render("guitars", { guitars: results });
+    })
+    .catch(function (err) {
+      console.log("Something went wrong", err.message);
+    });
+});
+
+
 
 
 // catch 404 and forward to error handler

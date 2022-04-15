@@ -1,8 +1,9 @@
 const { Schema, model } = require("mongoose");
-const keyboardSchema = new Schema(
-    {
+
+const keyboardSchema = new Schema({
       image: {
             type: String,
+            required: true,
         },
       name: {
         type: String,
@@ -24,9 +25,8 @@ const keyboardSchema = new Schema(
     {
       timeseries: true,
       timestamps: true,
-    }
-  );
+    });
 
-  const Keyboard = model("Keyboard", keyboardSchema);
+const Keyboard = model("Keyboard", keyboardSchema);
 
 module.exports = Keyboard;
