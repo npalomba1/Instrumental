@@ -49,7 +49,7 @@ let guitars = [
         price: '$2,295.00',
         used: 'Yes',     
     },
-
+]
 
 // let keyboard = [
 //     {
@@ -94,12 +94,13 @@ let guitars = [
 //     },
 // ];
 
-mongoose
-    .connect("mongodb://localhost/instrumental")
-    .then((x) =>
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-    )
-    .catch((err) => console.error("Error connecting to mongo", err));
+// mongoose
+//     .connect("mongodb://localhost/instrumental")
+//     .then((x) =>
+//     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+//     )
+//     .catch((err) => console.error("Error connecting to mongo", err));
+
 
 // Drum.create(drums)
 //     .then(function (results) {
@@ -126,15 +127,15 @@ mongoose
 
 
 
-let keyboard = [
-    {
-    name: 'Casio',
-    brand: "casio keyboard",
-    price: 129.99,
-    new: "yes",
-    used: "no",
-    }
-]
+// let keyboard = [
+//     {
+//     name: 'Casio',
+//     brand: "casio keyboard",
+//     price: 129.99,
+//     new: "yes",
+//     used: "no",
+//     }
+// ]
 
 
 mongoose
@@ -142,7 +143,7 @@ mongoose
     .then((x) =>
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     )
-    .catch((err) => console.error("Error connecting to mongo", err));
+    .catch((err) => console.error("Error connecting to mongo", err)),
 
 Guitar.create(guitars)
     .then(function(results){
@@ -152,14 +153,4 @@ Guitar.create(guitars)
     .catch(function(error){
         console.log("Something went wrong", error.message);
         mongoose.connection.close(); 
-    }); 
-
-// Drum.create(drums)
-//     .then(function (results) {
-//         console.log("Users saved", results);
-//         mongoose.connection.close();
-//     })
-//     .catch(function (error) {
-//         console.log("Something went wrong", error.message);
-//         mongoose.connection.close();
-//     });
+    })

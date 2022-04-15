@@ -6,7 +6,8 @@
     "start": "nodemon ./bin/www",
 
     "seed": "node ./bin/seed.js",
-    "keyseed": "node ./bin/keyboard-seed.js"
+    "keyseed": "node ./bin/keyboard-seed.js",
+    "drumseed": "node ./bin/drum-seed.js"
 
   },
   "dependencies": {
