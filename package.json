@@ -6,10 +6,7 @@
     "start": "nodemon ./bin/www",
 
     "seed": "node ./bin/seed.js",
-    "drumseed": "node ./bin/drum-seed.js"
-
-
-    "seed": "node ./bin/seed.js",
+    "drumseed": "node ./bin/drum-seed.js",
     "keyseed": "node ./bin/keyboard-seed.js"
 
 
