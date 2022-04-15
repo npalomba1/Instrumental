@@ -6,6 +6,8 @@ var logger = require('morgan');
 const mongoose = require("mongoose");
 const keyboard = require("./models/keyboard.models");
 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -56,6 +58,10 @@ app.post("/keyboard", function(req, res, next){
 });
 
 
+// app.get("/", function (req, res, next) {
+//   res.render("index", { title: "Instrumental" });
+// });
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -76,17 +82,10 @@ app.use(function(err, req, res, next) {
 mongoose 
   .connect("mongodb://localhost/instrumental")
   .then((x)  =>
+
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   )
   .catch((err) => console.error("Error connecting to mongo", err));
 
-  // keyboard.create() 
-  // .then(function(results){
-  //     console.log("Keyboard Data", results)
-  // })
-  // .catch(function(error){
-  //     console.log('Something went wrong', error.message)
-  //     mongoose.connection.close();
-  // })
 
 module.exports = app;
