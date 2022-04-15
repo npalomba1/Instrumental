@@ -6,7 +6,7 @@ var logger = require('morgan');
 const Drums = require("./models/drums.model");
 const mongoose = require("mongoose");
 const keyboard = require("./models/keyboard.models");
-
+const Guitar = require("./models/Guitar.models")
 
 
 var indexRouter = require('./routes/index');
@@ -65,7 +65,18 @@ app.get("/", function (req, res, next) {
   res.render("index", { title: "Instrumental" });
 });
 
-//
+app.get("/guitars", function (req, res, next) {
+  Guitar.find()
+    .then(function (results){
+      console.log('Success!', results); 
+      res.render("guitars", { guitars: results });
+    })
+    .catch(function (err) {
+      console.log("Something went wrong", err.message);
+    });
+});
+
+
 
 
 // catch 404 and forward to error handler

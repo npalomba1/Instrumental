@@ -10,15 +10,15 @@ const guitarSchema = new Schema({
     },
     brand: {
         type: String,
-    }
+    },
     price: {
         type: String,
         required: true,
-    }
+    },
     used: {
         type: String,
         enum: ["Yes", "No"],
-    };
+    }
 }); 
 
 const Guitar = model("Guitar", guitarSchema); 
