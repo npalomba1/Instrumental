@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 const Drum = require("../models/drums.model");
 
@@ -26,3 +27,17 @@ Drum.create(drums)
         console.log("Something went wrong", error.message);
         mongoose.connection.close();
     });
+=======
+const mongoose = require('mongoose');
+const Keyboard = require('../models/keyboard.models');
+
+let keyboard = [
+    {
+    name: 'Casio',
+    brand: "casio keyboard",
+    price: 129.99,
+    new: "yes",
+    used: "no",
+    }
+]
+
