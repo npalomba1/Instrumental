@@ -1,12 +1,18 @@
-<h2>Check out our guitars</h2>
+<h2>Guitars</h2>
 
-<div>
+<ol>
 {{#each guitars}}
-    <div>
-        <img src={{this.image}}>
-    </div>
-    <div>
-        {{this.name}}
-    </div>
+<img src={{this.image}} />
+    <li>{{this.name}}</li>
+<ul>
+    <li>{{this.brand}}</li>
+    <li>{{this.price}}</li>
+     {{!-- <li>{{this.new}}</li> --}}
+    <li>Used? {{this.used}}</li> 
+ </ul>
 {{/each}}
-</div>
+</ol>
+
+{{!-- <a href="/"><h2>Back Home<h2></a>
+<a href="/contact"><h2>Contact Us<h2></a>
+<a href="/keyboard"><h2>Find a keyboard</h2></a> --}}
