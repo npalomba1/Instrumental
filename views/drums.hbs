@@ -1,0 +1,22 @@
+<div>
+    <a href="/keyboard"><h2>Find a keyboard</h2></a>
+    <a href="/guitars"><h2>Find a guitar</h2></a>
+    <a href="/contact"><h2>Contact Us<h2></a>
+    <a href="/home"><h2>Back Home<h2></a>   
+</div>
+
+<h1>Get your Drums here!</h1>
+
+<ol>
+{{#each drums}}
+<img src={{this.image}}/>
+    <li>{{this.name}}</li>
+<ul>
+    <li>{{this.brand}}</li>
+    <li>{{this.price}}</li>
+    <li>Used: {{this.isUsed}}</li> 
+</ul>    
+{{/each}}  
+</ol>
+
+

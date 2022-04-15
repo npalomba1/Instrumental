@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "seed": "node ./bin/seed.js",
+    "drumseed": "node ./bin/drum-seed.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
